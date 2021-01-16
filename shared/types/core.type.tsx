@@ -1,8 +1,7 @@
 import React from 'react';
 
 export type RootStackParamList = {
-    CardCategories: undefined;
-    Players: undefined;
+    Home: undefined;
 };
 
 export interface DefaultPropTypes {
