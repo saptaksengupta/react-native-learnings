@@ -6,7 +6,7 @@ import {
 } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { ColorSchemeName } from "react-native";
-import {Home} from "../../screens/home";
+import {Home} from "../../screens";
 import { RootStackParamList } from "../../shared/types/core.type";
 
 export default function Navigation({colorScheme}: {
