@@ -1,4 +1,9 @@
+import { IUserType } from "./user.type";
+
 export const actions = {
+    SYNC: {
+        SUCCESS: 'SYNC.SUCCESS'
+    },
     FETCH_USER: {
         REQUEST: 'FETCH_USER.REQUEST', 
         SUCCESS: 'FETCH_USER.SUCCESS', 
@@ -15,7 +20,7 @@ export interface IUserListStateType {
     /**
      * User object
      */
-    user: Object | null;
+    users: Array<IUserType> | null;
 
     /**
      * Fetch user error 

@@ -3,7 +3,7 @@ import { IUserListStateType, actions } from './constants';
 import { UserListActions } from './user-list.action';
 
 const initialState: IUserListStateType = {
-    user: null,
+    users: null,
     fetchUserError: null,
     fetchUserLoading: false
 }
@@ -13,20 +13,23 @@ export const userListReducer = (state = initialState, action: UserListActions): 
         case actions.FETCH_USER.REQUEST:
             return {
                 fetchUserLoading: true,
-                user: null,
-                fetchUserError: null
+                ...state
             }
         case actions.FETCH_USER.SUCCESS:
             return {
                 fetchUserLoading: false,
-                user: action.payload,
-                fetchUserError: null
+                users: action.payload,
+                ...state
             }
         case actions.FETCH_USER.ERROR: 
             return {
-                fetchUserLoading: false,
-                user: null,
+                ...state,
                 fetchUserError: action.payload
+            }
+        case actions.SYNC.SUCCESS:
+            return {
+                ...state,
+                users: action.payload
             }
         default:
             return state;

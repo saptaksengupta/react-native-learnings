@@ -2,6 +2,15 @@
 import { actions } from './constants';
 
 /**
+ * Action, Sync users success
+ * @param users 
+ */
+export const syncUsersSuccess = (users) => ({
+    type: actions.SYNC.SUCCESS,
+    payload: users
+})
+
+/**
  * 
  * Action to request users.
  *  
