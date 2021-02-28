@@ -1,3 +1,4 @@
+import { useNeomorphismReturn } from './use-neomorphism';
 import React from 'react'
 
 type CreateContextReturn<T> = [React.Provider<T>, () => T, React.Context<T>];
@@ -47,7 +48,7 @@ export function createNamedContext<ConteextType>(options: CreateContextOptions =
 }
 
 
-const [NeomorphUiContextProvider, useNeomorphUiContext]  = createNamedContext({
+const [NeomorphUiContextProvider, useNeomorphUiContext]  = createNamedContext<useNeomorphismReturn>({
     strict: true,
     errorMessage: "useNeomorphContext: `context` is undefined. Seems you forgot to wrap neomorph-ui component in `<Neomorph-ui />`",
     name: "NeomorphUiContext"
