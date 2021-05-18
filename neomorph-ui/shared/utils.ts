@@ -1,0 +1,1 @@
+export const mode = (light: any, dark: any) => (props) => props.colorMode === 'light' ? light : dark; 

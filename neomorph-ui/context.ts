@@ -1,5 +1,5 @@
 import { useNeomorphismReturn } from './use-neomorphism';
-import React from 'react'
+import React from 'react';
 
 type CreateContextReturn<T> = [React.Provider<T>, () => T, React.Context<T>];
 
@@ -25,14 +25,14 @@ export interface CreateContextOptions {
  * @param options create context options
  * 
  */
-export function createNamedContext<ConteextType>(options: CreateContextOptions = {}) {
+export function createNamedContext<ContextType>(options: CreateContextOptions = {}) {
     const {
         strict = true,
         errorMessage = "useContext: `context` is  undefined. Seems you forgot to wrap component within the provider",
         name
     } = options;
 
-    const Context = React.createContext<ConteextType | undefined>(undefined);
+    const Context = React.createContext<ContextType | undefined>(undefined);
 
     Context.displayName = name;
 
@@ -44,7 +44,7 @@ export function createNamedContext<ConteextType>(options: CreateContextOptions =
         return context;
     }
 
-    return [Context.Provider, useContext, Context] as CreateContextReturn<ConteextType>;
+    return [Context.Provider, useContext, Context] as CreateContextReturn<ContextType>;
 }
 
 

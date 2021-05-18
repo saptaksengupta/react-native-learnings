@@ -1,6 +1,5 @@
-
-
-
+import { colors } from "./theme/foundation/colors";
+import { mode } from './shared/utils';
 /**
  * Global Props for Neomorphism-ui
  */
@@ -13,9 +12,20 @@ export interface UseNeomorphismUiProps {
 
 const deafultColorMode = 'light';
 
+/**
+ * 
+ * @param props 
+ * @returns Global base style object  
+ */
 const useNeomorphism = (props: UseNeomorphismUiProps) => {
     return {
-        colorMode: props.colorMode
+        colorMode: props.colorMode,
+        bgColor: mode(colors.light.bg, colors.dark.bg)(props),
+        primaryColor: mode(colors.light.primary, colors.dark.primary)(props),
+        accentColor: mode(colors.light.accent, colors.dark.accent)(props),
+        colors: {
+            gray_1: colors.gray_1
+        }
     }
 }
 

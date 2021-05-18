@@ -7,12 +7,7 @@ import rootSaga from './sagas';
 
 export const configureStore = () => {
     const enhancers = compose(middlewares);
-
     const store = createStore(rootReducer, enhancers);
-
     sagaMiddleWare.run(rootSaga);
-
-    store.dispatch({type: actions.FETCH_USER.REQUEST, payload: null});
-
     return store;
 }
