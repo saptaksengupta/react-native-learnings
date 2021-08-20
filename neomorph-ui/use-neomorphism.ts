@@ -24,6 +24,8 @@ const useNeomorphism = (props: UseNeomorphismUiProps) => {
         primaryColor: mode(colors.light.primary, colors.dark.primary)(props),
         accentColor: mode(colors.light.accent, colors.dark.accent)(props),
         colors: {
+            white: colors.white,
+            black: colors.black,
             gray_1: colors.gray_1
         }
     }

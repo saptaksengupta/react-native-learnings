@@ -1,8 +1,8 @@
 import { IUserType } from './user.type';
 import { actions } from './constants';
-import { all, fork, takeEvery } from "redux-saga/effects"; 
+import { all, fork, put, takeEvery } from "redux-saga/effects"; 
 import { syncCollection } from '../../redux-saga-firebase/firestore';
-import { syncUsersSuccess } from './user-list.action';
+import { syncUsersSuccess, fetchUsersSuccess } from './user-list.action';
 
 
 const onSyncSuccessTransformer = (querySnapshot) => {
@@ -31,7 +31,7 @@ function *watchFetchUsers() {
 }
 
 function *fetchUsers() {
-    yield console.log('Hey its inside user saga');
+    console.log('fetch user success');
 }
 
 
